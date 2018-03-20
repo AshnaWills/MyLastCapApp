@@ -36,6 +36,9 @@
   	<url-pattern>/getAllNames</url-pattern>
   </servlet-mapping>
   
+  <session-config>
+	<session-timeout>30</session-timeout>  
+  </session-config>
   <servlet>
   	<servlet-name>Login</servlet-name>
   	<servlet-class>com.caps.LoginServlet</servlet-class>
@@ -72,8 +75,14 @@
   	<url-pattern>/serv2</url-pattern>
   </servlet-mapping>
   
-  
-  
+  <servlet>
+  	<servlet-name>TimeV2</servlet-name>
+  	<jsp-file>/Time.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TimeV2</servlet-name>
+  	<url-pattern>/timeV2</url-pattern>
+  </servlet-mapping>
   
   
   
