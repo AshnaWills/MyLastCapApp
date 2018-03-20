@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +17,15 @@ public class LoginServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		
 		PrintWriter out = resp.getWriter();
+		Cookie[] cookies = req.getCookies();
+		
+		if(cookies == null) {
+			
+			out.print("<h1>Cookies are disabled</h1>");
+			return;
+		}
 		
 		//Get the data from the Login Form
 		String regno = req.getParameter("regno");
